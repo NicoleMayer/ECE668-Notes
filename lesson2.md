@@ -22,13 +22,19 @@ Compared to the CISC architecture:
 
 🤔RISC don't need much interaction with memory and calculations are based on registers. Thus register need to use either LD or ST to contact with data in the memory.
 
+---
+
 ❓Why in the RISC architecture are all the instructions the same length?
 
 🤔I think it's just a design to make it easy. Same length is better for pipline.
 
+---
+
 ❓Why is the RISC architecture considered to provide higher processor performance?
 
 🤔It's easy and efficient to execute. Each instruction takes one cycle. The same length property is also good for pipline. These things make it have higher processor performance.
+
+---
 
 ❓Why the RISC architecture that has fewer instructions, runs faster?
 
@@ -143,11 +149,15 @@ The most popular synthetic benchmarks:
 
 👨‍🏫Yes, but we should notice that it may lead to low die yield. Hopefully, as the manufacturing becomes much more mature, then die yield problem may be relieved. From this view, SOC is acceptable.
 
+---
+
 ❓Why are there empty slots in the previous slide diagram?
 
 🤔~~Maybe current CPU time is given to this thread but it needs to waiting for I/O, locks and so on?~~
 
 👨‍🏫There are some dependencies between different instructions. You do have the resources but the instructions can't use it. 
+
+---
 
 ❓What needs to be replicated for SMT?
 
