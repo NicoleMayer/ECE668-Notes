@@ -81,6 +81,7 @@ check [IBM System/360 architecture - Wikipedia](https://en.wikipedia.org/wiki/IB
 💡check [IBM System/360 - Wikipedia](https://en.wikipedia.org/wiki/IBM_System/360) for more Influential features (industry standards for successors)
 
 ❓What is the difference between an assembler and a compiler?
+
 🤔
 ```
 +---------------------+                           +-------------------+
@@ -100,6 +101,8 @@ check [IBM System/360 architecture - Wikipedia](https://en.wikipedia.org/wiki/IB
 
 👨‍🏫Device drivers. To make it as effcient as possible.
 
+---
+
 ❓What is the difference between a base and an index register?
 
 🤔check [Addressing Modes](http://www.cs.iit.edu/~cs561/cs350/addressing/addsclm.html)
@@ -108,11 +111,15 @@ check [IBM System/360 architecture - Wikipedia](https://en.wikipedia.org/wiki/IB
 
 👨‍🏫But time changes, since the memory is cheap, there is no much difference between these two registers at present. They are of the same size and we can mix and match registers much more freely.
 
+---
+
 ❓Why do you think we switched from the 7-bit byte in the Univac(UNIVersal Automatic Computer) days to the modern 8 bit-byte? Hint: Think number system.
 
 🤔8 is power of 2? Check [hardware - What is the history of why bytes are eight bits? - Software Engineering Stack Exchange](https://softwareengineering.stackexchange.com/questions/120126/what-is-the-history-of-why-bytes-are-eight-bits) for more discussions.
 
 👨‍🏫There is no need to change since 7 bits is enough. But for base-2 computers, 8-bit byte is much easy to implement.
+
+---
 
 ❓7 bits was sufficient to represent every printable character at that time. So why the extra bit?
 
@@ -120,6 +127,7 @@ check [IBM System/360 architecture - Wikipedia](https://en.wikipedia.org/wiki/IB
 
 👨‍🏫I'm right, it's for error checking.
 
+---
 
 ❓What does "32-bit machine" mean?
 
@@ -165,15 +173,21 @@ Z13 release in 2016
 
 👨‍🏫Yes, bascially compatibility issues. Some programs written in old days can still execute successfully on IBM mainframe System Z produced nowadays. 
 
+---
+
 ❓What are some examples of hazards?
 
 🤦‍♀️no idea what this means...
+
+---
 
 ❓Which ISA(s) in previous slide is (are) CISC?
 
 🤔Intel X86, definitely. I am not sure about others.
 
 👨‍🏫IBM 360 & Intel X86.
+
+---
 
 ❓Explain the difference between CISC and RISC.
 
@@ -185,6 +199,8 @@ Z13 release in 2016
 3. RISC provides fewer instructions than CISC.
 4. RISC is easier to pipline compared with CISC.
 5. Single clock	VS Multi-clock? 
+
+---
 
 ❓I am quite confusing about the popularity of CISC and RISC in the market after listenning the tutorials?
 
