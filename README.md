@@ -1,4 +1,4 @@
-# ECE668ComputerArchitecture
+# ECE668-Computer-Architecture
 Here are notes for ECE668 Computer Architecture in UMass, taught by Yadi Eslami
 
 ## Learning Object
