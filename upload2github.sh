@@ -6,7 +6,8 @@ git add .
 echo "1) Notetaking in class"
 echo "2) Re-sort the notes and solve some questions"
 echo "3) Review and remarks"
-echo "4) Other?"
+echo "4) Read textbook and take notes"
+echo "5) Other?"
 
 read number
 
@@ -18,6 +19,8 @@ elif [ 2 == $number ]; then
 elif [ 3 == $number ]; then
 	msg="Review and remarks `date '+%Y-%m-%d %H:%M:%S'`"
 elif [ 4 == $number ]; then
+	msg="Read textbook and take notes `date '+%Y-%m-%d %H:%M:%S'`"
+elif [ 5 == $number ]; then
 	read userWantedCommit
 	msg="$userWantedCommit `date '+%Y-%m-%d %H:%M:%S'`"
 fi
