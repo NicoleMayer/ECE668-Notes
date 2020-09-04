@@ -164,6 +164,53 @@ The most popular synthetic benchmarks:
 🤔pre thread state, stacks, registers...
 
 
+## Energy and Power
+
+```
+Total Power consumption = Dynamic Power + Static Power
+
+Energy = Power * T
+```
+
+### Dynamic Power
+
+* Due to signals switching.
+* Required to charge and discharge load capacitances when transistors switch.
+* One cycle involves a rising and falling output.
+  * On rising output, charge Q = CV_{DD}, is required.
+  * On falling output, charge is dumped to GND.
+* Current Components:
+  * Charge/discharge current
+  * Short-circuit current
+
+![](image/2020-09-04-dynamic-power.jpg)
+
+
+
+### Static Power
+
+* Due to leakage currents in Transistors
+  * Junction leakage
+  * Gate oxide leakage
+  * Subthreshold leakage
+
+
+![](image/2020-09-04-static-power.jpg)
+
+
+### Conclusion
+
+❓Why low clock frequency growth in the past 17 years? (slide 19)
+
+🤔The higher of the clock frequency, the more powerful of the CPU.
+
+**Techniques for reducing power**(slide 20): 
+  * Do nothing well
+  * Dynamic Voltage-Frequency Scaling
+  * Low power state for DRAM, disks
+  * Overclocking, turning off cores
+
+
 ## Integrated Circuits Yield
 
 Die Yield = Wafer yield * (1 + Defect Density * Die area / alpha)^(-alpha)
