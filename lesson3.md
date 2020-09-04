@@ -1,3 +1,6 @@
+# Lesson3 Amdahl’s Law, CPI, and Arithmetic Pipelines
+
+[TOC]
 
 ❓Besides higher frequency, larger dies, more parallel processing, superscalar,
 pipelines, and simultaneous multithreading, what other ways can you think of
@@ -12,7 +15,7 @@ that can be used to increase processor speeds?
 📗Intel started offering Turbo mode in 2008, where the chip decides that it is safe to run at a higher clock rate for a short time, possibly on just a few cores, until temperature starts to rise. 看书里的定义有印象了，就是没记得这个专有名词。本质上还是 higher frequency 的范畴。
 
 
-# Amdahl’s Law
+## Amdahl’s Law
 
 Assume we are xecuting a program on N independent processors:
 
@@ -51,7 +54,7 @@ lim(n->$\infty$) speedup_{Overall} = 1 / (1 - Fraction_{enhanced})
 
 👨‍🏫First, when multiple processors access the same cache line, memory data, there may be a collision, which brings a lot of I/O costs. Both for data input and output (if we want things to go together in the end). Second, when you divide the tasks into multiple pieces, the time saving for multiple processors usually less than the time for communication.
 
-# CPI
+## CPI
 
 Average CPU time per program:
 
@@ -94,7 +97,7 @@ Check slide 12 for a calculation example.
 👨‍🏫Ummm, my answer is in the wrong direction. As we can see in the last few slides, we can adopt **pipeline** into the implementation of ALU, which will hugely increase the performance.
 
 
-# Arithmetic Pipelines
+## Arithmetic Pipelines
 
 ### Ideal vs non-ideal pipelines
 
