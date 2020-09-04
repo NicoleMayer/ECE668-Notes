@@ -5,6 +5,12 @@ that can be used to increase processor speeds?
 
 🤔Increase the voltage. Re-design the adder, multiplier, divider... Any component that needed in the ALU implementation. Caches maybe, since if the memory access is slow, it will become the bottleneck and limit the processing speed.
 
+👨‍🏫My answer is correct. Basically the problem is about memory access. Adding multiple layer's cache is a good solution. But there are also other solutions, like buffer (both for data and instructions). Besides, using specialized processing units rather than general-propose processors also helps. Last but not the least, quantum computing.
+
+ℹ️Turbo mode 28:05 听了很久没听懂的...本来以为自己英语不好，原来是孤陋寡闻，我的词库里没有这个东东... 
+
+📗Intel started offering Turbo mode in 2008, where the chip decides that it is safe to run at a higher clock rate for a short time, possibly on just a few cores, until temperature starts to rise. 看书里的定义有印象了，就是没记得这个专有名词。本质上还是 higher frequency 的范畴。
+
 
 # Amdahl’s Law
 
@@ -22,6 +28,8 @@ Speedup_{overall} = ExTime_{old} / ExTime_{new} = 1 / [(1 - Fraction_{enhanced})
 lim(n->$\infty$) speedup_{Overall} = 1 / (1 - Fraction_{enhanced})
 ```
 
+👨‍🏫This fraction can be either executing time wise or instruction number wise.
+
 👧We notice that there is an upper bound of the overall speedup, that is `1 / (1 - Fraction_{enhanced})`. Slide 8 gives an example.
 
 ---
@@ -30,13 +38,18 @@ lim(n->$\infty$) speedup_{Overall} = 1 / (1 - Fraction_{enhanced})
 
 🤔Infinite close to zero?
 
+👨‍🏫Correct.
+
 ---
 
 ![](image/2020-09-02-speedup-graph.jpg)
 
 ❓Why does the practical curve go down?
 
-🤔As the number of processors becomes larger, the running program should be cut into more divisible parts. That's hard when the tasks are really small enought that can't be divided any longer. In that case, some processors are redundant and they can't be taken good advantage.
+🤔As the number of processors becomes larger, the running program should be cut into more divisible parts. That's hard when the tasks are really small enought that can't be divided any longer. In that case, some processors are redundant and they can't be taken good advantage. Besides, more processors means there may be more communication costs, which leads to the decrease of the speedup.
+
+
+👨‍🏫First, when multiple processors access the same cache line, memory data, there may be a collision, which brings a lot of I/O costs. Both for data input and output (if we want things to go together in the end). Second, when you divide the tasks into multiple pieces, the time saving for multiple processors usually less than the time for communication.
 
 # CPI
 
@@ -78,6 +91,9 @@ Check slide 12 for a calculation example.
 
 🤔Compared with load, store, ALU don't need to be interacted with memory, which takes a long time to execute; compared with branch, ALU is determinstic and sequential.
 
+👨‍🏫Ummm, my answer is in the wrong direction. As we can see in the last few slides, we can adopt **pipeline** into the implementation of ALU, which will hugely increase the performance.
+
+
 # Arithmetic Pipelines
 
 ### Ideal vs non-ideal pipelines
@@ -93,6 +109,10 @@ Check slide 12 for a calculation example.
 **k-stage Pipeline - Speedup:**
 
 ![](image/2020-09-02-k-stage-pipeline.jpg)
+
+❓Why the practical case will decrease at somewhere?
+
+👨‍🏫The more stages, the more hardware support. But sometimes an instruction cannot be divived into so many stages. So they cannot be executed at the same time.
 
 ### Arithmetic Pipelines
 
