@@ -7,7 +7,9 @@ echo "1) Notetaking in class"
 echo "2) Re-sort the notes and solve some questions"
 echo "3) Review and remarks"
 echo "4) Read textbook and take notes"
-echo "5) Other?"
+echo "5) QUIZ review"
+echo "6) Other?"
+
 
 read number
 
@@ -21,6 +23,8 @@ elif [ 3 == $number ]; then
 elif [ 4 == $number ]; then
 	msg="Read textbook and take notes `date '+%Y-%m-%d %H:%M:%S'`"
 elif [ 5 == $number ]; then
+	msg="QUIZ review `date '+%Y-%m-%d %H:%M:%S'`"
+elif [ 6 == $number ]; then
 	read userWantedCommit
 	msg="$userWantedCommit `date '+%Y-%m-%d %H:%M:%S'`"
 fi
