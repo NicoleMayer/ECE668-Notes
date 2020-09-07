@@ -10,13 +10,15 @@ The second question, "Instruction level parallelism is the degree to which multi
 
 Therefore, I don't know where I wrong in this question. I may discuss with professor afterwards.
 
----
-
-👧The answer of question 3 is 1.212, which is impossible since it is larger than 1. Need further confirmation.
+(2020-09-07 update) Professor told me I am right.
 
 ---
 
-👧The answer of question 6 is 701.86, which is not reasonable for CPI (cycles per instruction). Need further confirmation.
+👧The answer of question 3 is 1.212, which is impossible since it is larger than 1. ~~Need further confirmation.~~
+
+---
+
+👧The answer of question 6 is 701.86, which is not reasonable for CPI (cycles per instruction). ~~Need further confirmation.~~
 
 ---
 
@@ -32,7 +34,9 @@ But in this case, we can't use the formula since the question asks for the ideal
 
 ❓Suppose that the overall speedup for a program containing 51% divide operations is 4.9 when we replace the old divider by a new one that is n times faster. What is n? Round to two decimal places.
 
-🤔A simple question but get a impossible answer. `1/((1-0.51)+0.51/n)=4.9` -> `n=-1.78`. But the correct answer is `1.016`. I have no idea about the answer. Need further discussion.
+🤔A simple question but get a impossible answer. `1/((1-0.51)+0.51/n)=4.9` -> `n=-1.78`. But the correct answer is `1.016`. I have no idea about the answer. ~~Need further discussion.~~
+
+(2020-09-07 update) Professor told me I am right.
 
 ---
 
@@ -42,4 +46,4 @@ But in this case, we can't use the formula since the question asks for the ideal
 
 ---
 
-PS: I found that it was not the professor's problem to get some ridiculous answer, since everyone gets the same question with different numbers. So I guess maybe the numbers are randomly generated and this make sense.
+PS: I found that it was not the professor's problem to get some ridiculous answer, since everyone gets the same question with different numbers. So I guess maybe the numbers are randomly generated and this make sense. No need for further confirmation any more.
