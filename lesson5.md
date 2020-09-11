@@ -36,11 +36,15 @@ Patterson, Chapter 3 and Appendix C
 
 🤔To store the instruction address.
 
+👨‍🏫PC - program counter.
+
 ---
 
 ❓Why +4?
 
 🤔To fetch the next instruction. The instruction is 32-bit and is accessed by byte-addressing mode.
+
+👨‍🏫Right.
 
 ---
 
@@ -48,11 +52,23 @@ Patterson, Chapter 3 and Appendix C
 
 🤔The data's address that will be overwritten and the updated value.
 
+👨‍🏫Right. The upper one is for address and the bottom one is for data.
+
+PS: I add some comments on the data path. After figuring out each line and box in the diagram, it's much easier to understand all of these questions.
+
+![](image/2020-09-11-implementation-with-comments.jpg)
+
 ---
 
 ❓What instruction uses MD?
 
 🤔I don't know what MD short for...
+
+👨‍🏫Fine, MD means memory data register. So I know it's for load instruction...
+
+A student ask: is there possible to directly use the results of MD in ALU? (I think he means fowarding)
+
+👨‍🏫Yeah, actually we use latches instead of MD afterwards for pipelining.
 
 ---
 
@@ -60,12 +76,17 @@ Patterson, Chapter 3 and Appendix C
 
 🤔Combined with some control signals to select a correct way, that means doing sth or not.
 
+👧See my previous image with comments. Everything is clear.
+
+
 ---
 
 
 ❓Can this implementation (without the common bus) be pipelined?
 
 🤔Yes.
+
+👨‍🏫Correct.
 
 ## datapath with pipeline registers
 
@@ -108,6 +129,8 @@ E. All of the above.
 
 🤔E. All of the above.
 
+👨‍🏫Correct.
+
 ---
 
 Visualizing Pipelining - 2nd way:
@@ -145,11 +168,15 @@ An instruction in the pipeline may need a resource being used by a previous inst
 
 One Memory Port Example (See slide 16-17)
 
+👨‍🏫One possible way is to use two ports for reading, one port for writing. 
+
 Several questions:
 
 ❓Why is the first instruction here a LOAD?
 
-🤔Each instruction can be executed at first, as long as the user want...
+🤔Any instruction can be executed at first, as long as the user want...
+
+👨‍🏫I think professor thinks in my way, and he just want to emphasize that some instructions can cause a hazard.
 
 ---
 
@@ -177,7 +204,7 @@ Several questions:
   * Can resolve in hardware by stalling newer instruction till older instruction finishes with resource
 * A structural hazard can always be avoided by adding more hardware to design
   * E.g., if two instructions both need a port to memory at same time, could avoid hazard by adding second port to memory
-* Our 5-stage pipe has no structural hazards by design
+* **Our 5-stage pipe has no structural hazards by design**
 
 
 ## Data hazards
@@ -204,11 +231,15 @@ Data Hazard on R1:
 
 🤔2 stalls.
 
+👨‍🏫Right.
+
 ---
 
 ❓How can penalty be reduced?
 
 🤔forwarding? re-order?
+
+👨‍🏫Right. Extra hardware also helps.
 
 ### 2nd Generic Data Hazard - WAR
 
@@ -231,3 +262,4 @@ Branches and jumps
 
 PS: I feel sleepy when I listened the lectures so I didn't follow really well.
 
+PS2: Professor also talks about something in the quiz and homework. Due to the limited time, many questions in the lecture haven't been discussed.
