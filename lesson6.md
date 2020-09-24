@@ -52,6 +52,8 @@ instruction types and their formats:
 
 🤔Temporary store the PC, and when the instruction wants to jump back, restore it from r31. I think it's for function stack?
 
+👨‍🏫Right. Usually for function or subroutine calls and the instructions should come back to the saved one.
+
 ## Load & Store Hazards
 
 Detecting the data hazards in memory is much harder!
@@ -76,11 +78,23 @@ However, the hazard is avoided because our memory system completes writes in one
 
 🤔For two source registers. Either of them will use the output of previous ALU.
 
+👨‍🏫Right. An example from professor:
+
+```
+ADD r1, r2, r3
+SUB r4, r1, r5
+AND r4, r5, r1
+```
+ADD modify r1, but both SUB and AND need r1 with different positions. In this case, two forwarding paths are needed.
+
+
 ---
 
 ❓Why are there two additional paths from MEM/WB?
 
-🤔I think the upper one is the data from memory and the bottom one is to check whether it is a load instruction or a store instruction.
+🤔~~I think the upper one is the data from memory and the bottom one is to check whether it is a load instruction or a store instruction.~~
+
+👨‍🏫The upper is the data from memory, that's right but to be more specific, only load instruction. The bottom one is just the ALU results from previous stage.
 
 ## Other problems
 
@@ -92,6 +106,8 @@ However, the hazard is avoided because our memory system completes writes in one
 ❓Can another forwarding path be added?
 
 🤔No.
+
+👨‍🏫RAW hazard, can add a NOP or dyanmically find a suitable instruction to fit in the stall.
 
 ---
 
@@ -134,6 +150,10 @@ RAW Hazard:
 
 ![](image/2020-09-12-MIPS-R4000-3.jpg)
 
+❓What are the consequences? (More stages)
+
+👨‍🏫More stalls.
+
 # Pipelining with Stalls - calculations
 
 ```
@@ -150,3 +170,14 @@ Speedup = (Pipeline depth / (1 + Average stall CPI Cycle Time)) * (Cycle Time_{u
 **Benefits of Forwarding (All Instructions)**
 
 see a calculation in slide 19 
+
+❓Why don't calculate with forwarding this time?
+
+👨‍🏫Except "load", all other instructions can be forwarded using forwarding.
+
+
+---
+
+homework1 question6
+
+嘤嘤嘤，我又做错了。。我把communication cost加在speedup里面，而没有用乘。
