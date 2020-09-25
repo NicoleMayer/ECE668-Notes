@@ -62,7 +62,7 @@ See here:
 
 🤔Stop the data flow and clear the instruction?
 
-👨‍🏫Replace the instruction that has been read zero. The hardware should ensure that uncertain instruction execution can be undo.
+👨‍🏫Replace the instruction that has been read zero. Clear the IF/ID latch. The hardware should ensure that uncertain instruction execution can be undo.
 
 ---
 
