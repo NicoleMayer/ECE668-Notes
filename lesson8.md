@@ -20,6 +20,7 @@ Patterson, Chapter 3 and Appendix C
 
 🤔Re-arrange the order of branches, always put the branches with high probablity as the first branch.
 
+👨‍🏫Reduce branches and jumps.
 
 ## Dealing with Branch in MIPS
 
@@ -60,6 +61,8 @@ See here:
 ❓How do you squash the LOAD instruction? (See the image in slide 10)
 
 🤔Stop the data flow and clear the instruction?
+
+👨‍🏫Replace the instruction that has been read zero. The hardware should ensure that uncertain instruction execution can be undo.
 
 ---
 

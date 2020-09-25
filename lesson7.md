@@ -22,6 +22,8 @@ Patterson, Chapter 3 and Appendix C
 
 🤔Make the adjacent instructions less dependent. Also can re-order the instructions without changing the program results.
 
+👨‍🏫Remove some branches / re-order load instructions and other instruction without change the code logic
+
 ## Software Scheduling
 
 Re-order the codes to Avoid Load Hazards:
@@ -37,6 +39,8 @@ Re-order the codes to Avoid Load Hazards:
 ❓Will SW after ADD cause the stall?
 
 🤔No.
+
+👨‍🏫Professor gives a detailed explanation of this question.
 
 
 ##  Multi-Cycle Operation
@@ -60,6 +64,8 @@ FP.Div  24
 ❓Why would we not design the divider as a pipeline?
 
 🤔Maybe the data dependency?
+
+👨‍🏫Only allow one divider operation to execute one time. Also it's hard to ensure that each part of divider finished at the same time.
 
 ### Hazards
 
@@ -97,6 +103,8 @@ new:
 
 🤔14 cycles?
 
+👨‍🏫Right.
+
 ---
 
 ## WINMIPS64 Software
@@ -118,6 +126,8 @@ See slide 11-12.
 ❓What will be the final offset in the binary instruction?
 
 🤔36-16=20 20/4=5 => 00101
+
+👨‍🏫Right. 0...0101
 
 ---
 
