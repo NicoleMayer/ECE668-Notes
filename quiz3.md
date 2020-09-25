@@ -26,13 +26,27 @@ quiz的成绩真的是很大的打击，说很大其实也有点夸张，在大�
 
 ❓The numbers (addresses) assigned to the floating-point registers in a processor must be different from those assigned to the integer (general-purpose) registers.❌
 
-👨‍🏫The addresses for the floating point registers do not need to be different from the integer registers (actually they're better be the same), however, they will be recognized by the instruction op-code and will have their own RF. The correct answer is: No, they do not have to be different
+👨‍🏫The addresses for the floating point registers do not need to be different from the integer registers (actually they're better be the same), however, they will be recognized by the instruction op-code and will have their own RF. The correct answer is: No, they do not have to be different. The only difference is the instruction type, for integers or floating numbers.
 
 ---
 
 ❓The IF/ID and ID/EX inter-stage registers in the MIPS processor include the same number of bits. ❌
 
 👨‍🏫For example, IF/ID includes register numbers (5-bit IDs) while ID/EX includes registers' content (32-bit data). 
+
+See slide 12 for lesson 5.
+
+---
+
+❓The offset field in conditional branch instructions is signed extended before being added.✅
+
+👨‍🏫But be careful that not all the instructions need signed extended. (e.g. logic operations) I have the same confusion as the student who asked it. According to the diagram, it seems like all instructions will use signed extended? But actually it's not the case, remember this is just enough.
+
+---
+
+❓Only the Load and Store instructions in MIPS perform address calculation.❌
+
+👨‍🏫The answer for this question is not right. Branch also perform address calculation.
 
 # Calculations
 
@@ -60,3 +74,8 @@ The Load instruction will then be replaced by two instructions: Load-A (read fro
 🤔~~Assume there is 100 instructions, then the count of load instructions are 20 and 80 for other instructions. Since the original signal cycle of load instruction is replaced by two, so we can think there are 40 load instructions in this case. So my answer is speedup =  the 5-stage cycles / the 4-stage cycles = (4+80+20*2-1) / (99+5) = 1.18.~~ But the answer just gives the percentage of load instructions 1+20%=1.2?
 
 👨‍🏫The CPI of the two pipelines is the same (i.e., 1) but the number of instructions for the 4-stage pipeline will increase by 20%.
+
+---
+
+👨‍🏫Professor's comments: The speed up calculation for the pipelined processors is for a large program with a large number of instructions. Your examples are not considering this fact and hence, your numbers are not matching up with the given answers. Repeat your calculations for the case that the program has 1000,000 instructions and see the difference. You may calculate it mathematically for “n” being the number of instructions and then take the limit as “n” goes to infinity.
+
