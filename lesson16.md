@@ -17,3 +17,5 @@ Patterson, Chapter 3 and Appendix C
 * Tomasulo’s algorithm with reorder buffer example
 
 ## Contents
+
+![](image/lec16.png)
